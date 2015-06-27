@@ -1,7 +1,7 @@
 {
   "name": "sass-import-resolve",
   "version": "0.0.1",
-  "description": "Parses sass string and returns an array of filenames that the @import directives resolve.",
+  "description": "Parses sass string and returns an array of filenames that the `@import` directives resolve.",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/"
