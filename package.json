@@ -1,7 +1,7 @@
 {
   "name": "sass-import-resolve",
   "version": "0.0.1",
-  "description": "Parses sass string and returns an array of paths that resolve the @import declaration.",
+  "description": "Parses sass string and returns an array of filenames that the @import directives resolve.",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/"
@@ -10,9 +10,19 @@
     "sass",
     "scss",
     "sass-imports",
-    "@import",
-    "sass-parser",
-    "parser"
+    "sass-import",
+    "sass-import-resolve",
+    "sass-import-resolver",
+    "sass-parser"
+    "scss-imports",
+    "scss-import",
+    "scss-import-resolve",
+    "scss-import-resolver",
+    "scss-parser"
+    "@import"
+  ],
+  "files": [
+    "index.js"
   ],
   "author": "dadish <nurguly.ashyrov@gmail.com>",
   "license": "MIT",
