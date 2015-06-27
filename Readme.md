@@ -26,16 +26,16 @@ var sassStr = fs.readFileSync('screen.scss', {encoding : 'utf8'});
 console.log(resolve('screen.scss', sassStr));
 
 //=> [ '/test/scss/a.sass',
-//=>   '/test/scss/_a.sass',
-//=>   '/test/scss/a.scss',
-//=>   '/test/scss/_a.scss',
-//=>   '/test/b/a.sass',
-//=>   '/test/b/_a.sass',
-//=>   '/test/b/a.scss',
-//=>   '/test/b/_a.scss',
-//=>   '/test/scss/c.scss',
-//=>   '/test/scss/_d.sass',
-//=>   '/test/scss/_d.scss' ]
+       '/test/scss/_a.sass',
+       '/test/scss/a.scss',
+       '/test/scss/_a.scss',
+       '/test/b/a.sass',
+       '/test/b/_a.sass',
+       '/test/b/a.scss',
+       '/test/b/_a.scss',
+       '/test/scss/c.scss',
+       '/test/scss/_d.sass',
+       '/test/scss/_d.scss' ]
     
 ```
 > __Please Note:__ This module does not know and care about your files. The file and it's content does not have to exist. It also doesn't care if the resolved paths exist. It's job is only to resolve sass `@import` directive.
