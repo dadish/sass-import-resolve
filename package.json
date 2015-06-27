@@ -13,12 +13,12 @@
     "sass-import",
     "sass-import-resolve",
     "sass-import-resolver",
-    "sass-parser"
+    "sass-parser",
     "scss-imports",
     "scss-import",
     "scss-import-resolve",
     "scss-import-resolver",
-    "scss-parser"
+    "scss-parser",
     "@import"
   ],
   "files": [
