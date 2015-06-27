@@ -1,4 +1,4 @@
-Parses sass string and returns an array of paths that resolve the `@import` declaration.
+Parses sass string and returns an array of filenames that the @import directives resolve.
 
 ## Installation
 
