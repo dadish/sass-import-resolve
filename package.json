@@ -1,0 +1,22 @@
+{
+  "name": "sass-import-resolve",
+  "version": "0.0.1",
+  "description": "Parses sass string and returns an array of paths that resolve the @import declaration.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/"
+  },
+  "keywords": [
+    "sass",
+    "scss",
+    "sass-imports",
+    "@import",
+    "sass-parser",
+    "parser"
+  ],
+  "author": "dadish <nurguly.ashyrov@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}
