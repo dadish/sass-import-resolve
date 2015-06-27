@@ -107,6 +107,11 @@ Default: `false`
 
 Weather you want the files that are not prefixed with underscore to be resolved.
 
+## Test
+```
+npm test
+```
+
 ## License
 
 MIT
