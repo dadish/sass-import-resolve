@@ -66,7 +66,7 @@ It doesn't matter if the name is prefixed with underscore or not.
 a.scss
 ```
 
-##### "a.css", "url('a')", "http://example..."
+##### "a.css", "url('a')", "http://"
 As per [sass documentation][sass-lang], there are a few circumstances when `@import` directive will not resolve at all:
 - If the file’s extension is .css.
 - If the filename begins with http://.
