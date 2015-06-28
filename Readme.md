@@ -116,6 +116,7 @@ npm test
 
 ## License
 
-MIT
+[MIT][license]
 
 [sass-lang]: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#import
+[license]: https://raw.githubusercontent.com/dadish/sass-import-resolve/master/LICENSE
