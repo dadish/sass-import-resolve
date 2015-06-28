@@ -1,6 +1,6 @@
 {
   "name": "sass-import-resolve",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Parses sass string and returns an array of filenames that the `@import` directives resolve.",
   "keywords": [
     "sass",
@@ -17,7 +17,7 @@
     "scss-parser"
   ],
   "author": "dadish <nurguly.ashyrov@gmail.com>",
-  "license" : "MIT",
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/"
