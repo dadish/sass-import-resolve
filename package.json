@@ -1,6 +1,6 @@
 {
   "name": "sass-import-resolve",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Parses scss string and returns an array of filenames that the `@import` directives resolve.",
   "keywords": [
     "sass",
