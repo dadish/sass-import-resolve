@@ -1,3 +1,5 @@
+##sass-import-resolve [![Build Status](https://travis-ci.org/dadish/sass-import-resolve.svg?branch=master)](https://travis-ci.org/dadish/sass-import-resolve)
+
 Parses scss string and returns an array of filenames that the `@import` directives resolve.
 
 ## Installation
