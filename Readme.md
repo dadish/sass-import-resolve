@@ -98,13 +98,13 @@ Default: `true`
 Weather you want the SCSS files to be resolved.
 
 #### options.resolvePrefixed
-Type: `Boolean`
+Type: `Boolean`  
 Default: `true`
 
 Weather you want the files that are prefixed with underscore to be resolved.
 
 #### options.resolveUnprefixed
-Type: `Boolean`
+Type: `Boolean`  
 Default: `false`
 
 Weather you want the files that are not prefixed with underscore to be resolved.
