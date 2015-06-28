@@ -2,10 +2,6 @@
   "name": "sass-import-resolve",
   "version": "0.0.1",
   "description": "Parses sass string and returns an array of filenames that the `@import` directives resolve.",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha test/"
-  },
   "keywords": [
     "sass",
     "scss",
@@ -18,14 +14,27 @@
     "scss-import",
     "scss-import-resolve",
     "scss-import-resolver",
-    "scss-parser",
-    "@import"
+    "scss-parser"
   ],
+  "author": "dadish <nurguly.ashyrov@gmail.com>",
+  "license" : "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/"
+  },
   "files": [
     "index.js"
   ],
-  "author": "dadish <nurguly.ashyrov@gmail.com>",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dadish/sass-import-resolve.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.githubusercontent.com/dadish/sass-import-resolve/master/LICENSE"
+    }
+  ],
   "dependencies": {
     "underscore": "^1.8.3"
   }
