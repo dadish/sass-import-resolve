@@ -105,7 +105,7 @@ Weather you want the files that are prefixed with underscore to be resolved.
 
 #### options.resolveUnprefixed
 Type: `Boolean`  
-Default: `false`
+Default: `true`
 
 Weather you want the files that are not prefixed with underscore to be resolved.
 
