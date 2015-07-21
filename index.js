@@ -136,8 +136,8 @@ function resolveImports (targetPath, sassStr, settings) {
   settings = settings || {};
   settings = _.defaults(settings, defaults);
   
-  if (!_.isString(targetPath) || !targetPath) throw new Error('The first argument should be `string`');
-  if (!_.isString(sassStr) || !sassStr) throw new Error('The second argument should be `string`');
+  if (!_.isString(targetPath) || !targetPath) throw new Error('The first argument should be `string` that is not empty');
+  if (!_.isString(sassStr) || !sassStr) throw new Error('The second argument should be `string` that is not empty');
 
   // resolve targetPath
   targetPath = path.resolve(targetPath);
