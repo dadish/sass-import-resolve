@@ -3,8 +3,10 @@
 Parses scss string and returns an array of filenames that the `@import` directives resolve.
 
 ## Installation
-
-Run `npm install sass-import-resolver`.
+Install with [npm][npm]
+```bash
+npm install sass-import-resolve
+```
 
 ## Usage
 
@@ -40,7 +42,9 @@ console.log(resolve('screen.scss', sassStr));
 //=>   '/test/scss/_d.scss' ]
     
 ```
-> __Please Note:__ This module does not know and care about your files. The file and it's content does not have to exist. It also doesn't care if the resolved paths exist. It's job is only to resolve sass `@import` directive.
+> __Please Note:__ This module does not know and care about your files. The 
+> file and it's content does not have to exist. It also doesn't care if the 
+> resolved paths exist. It's job is only to resolve sass `@import` directive.
 
 ### Rules
 The module should be compatible with all the rules described in the sass [docmentation][sass-lang] for `@import` directive.
@@ -111,6 +115,7 @@ Weather you want the files that are not prefixed with underscore to be resolved.
 
 ### Test
 ```
+npm install
 npm test
 ```
 
@@ -120,3 +125,4 @@ npm test
 
 [sass-lang]: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#import
 [license]: https://raw.githubusercontent.com/dadish/sass-import-resolve/master/LICENSE
+[npm]: https://npmjs.org
