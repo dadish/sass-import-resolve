@@ -69,7 +69,8 @@ function normalizeItem (importItem, basePath, settings) {
   // All possible filename versions that importItem resolves
   versions = [];
 
-  withExtension = lastStr.length > 5 && lastStr.indexOf('.scss') === lastStr.length - 5 || lastStr.indexOf('.sass') === lastStr.length - 5;
+  withExtension = lastStr.indexOf('.scss') !== -1 && lastStr.indexOf('.scss') + 5 === lastStr.length;
+  if (!withExtension) withExtension = lastStr.indexOf('.sass') !== -1 && lastStr.indexOf('.sass') + 5 === lastStr.length;
 
   if (withExtension) {
     return [path.resolve(basePath, importItem)];
