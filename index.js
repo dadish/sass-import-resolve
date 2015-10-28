@@ -1,5 +1,19 @@
 var path = require('path');
-var _    = require('underscore')
+
+// http://stackoverflow.com/questions/10865025/merge-flatten-an-array-of-arrays-in-javascript
+function flatten(arr) {
+  return arr.reduce(function (flat, toFlatten) {
+    return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
+  }, []);
+}
+
+// http://stackoverflow.com/questions/13486479/how-to-get-an-array-of-unique-values-from-an-array-containing-duplicates-in-java
+function unique(a) {
+    return a.reduce(function(p, c) {
+        if (p.indexOf(c) < 0) p.push(c);
+        return p;
+    }, []);
+}
 
 function parse (content, index, importedItems) {
   var startIndex, endIndex, importKeyStart, importKeyEnd, extract;
@@ -42,13 +56,10 @@ function parse (content, index, importedItems) {
 
   importedItems.push(extract);
 
-  importedItems = _(importedItems)
-    .chain()
-    .flatten()
+  importedItems = flatten(importedItems)
     .filter(function (item) {
       return item;
-    })
-    .value();
+    });
 
   return parse(content, endIndex, importedItems);
 }
@@ -119,26 +130,25 @@ function normalizeItem (importItem, basePath, settings) {
     
   }
 
-  return _(versions).map(function (item) {
+  return versions.map(function (item) {
     return path.resolve(basePath, item);
   });
 }
 
 function resolveImports (targetPath, sassStr, settings) {
-  var out, defaults;
-
-  defaults = {
-    resolveSass : true,
-    resolveScss : true,
-    resolveUnprefixed : true,
-    resolvePrefixed : true
-  };
+  var out;
 
   settings = settings || {};
-  settings = _.defaults(settings, defaults);
-  
-  if (!_.isString(targetPath) || !targetPath) throw new Error('The first argument should be `string` that is not empty');
-  if (!_.isString(sassStr) || !sassStr) throw new Error('The second argument should be `string` that is not empty');
+
+  settings = {
+    resolveSass : settings.resolveSass === void 0 ? true : settings.resolveSass,
+    resolveScss : settings.resolveScss === void 0 ? true : settings.resolveScss,
+    resolveUnprefixed : settings.resolveUnprefixed === void 0 ? true : settings.resolveUnprefixed,
+    resolvePrefixed : settings.resolvePrefixed === void 0 ? true : settings.resolvePrefixed
+  };
+
+  if (typeof targetPath !== 'string' || !targetPath) throw new Error('The first argument should be `string` that is not empty');
+  if (typeof sassStr !== 'string' || !sassStr) throw new Error('The second argument should be `string` that is not empty');
 
   // resolve targetPath
   targetPath = path.resolve(targetPath);
@@ -147,14 +157,13 @@ function resolveImports (targetPath, sassStr, settings) {
   out = parse(sassStr, 0, []);
 
   // normalize
-  out = _(out).map(function (importItem) {
+  out = out.map(function (importItem) {
     return normalizeItem(importItem, getBase(targetPath), settings);
   });
 
   // flatten
-  out = _(out).chain().flatten().unique().value();
-
-  return out;
+  out = flatten(out);
+  return unique(out);
 };
 
 module.exports = resolveImports;
