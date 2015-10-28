@@ -105,13 +105,15 @@ Weather you want the SCSS files to be resolved.
 Type: `Boolean`  
 Default: `true`
 
-Weather you want the files that are prefixed with underscore to be resolved.
+Weather you want to resolve files that are prefixed with underscore.
+> Note: If your import path is already prefixed. E.g. `@import "_a"`, this
+> option is ignored, and only prefixed paths will resolve.
 
 #### options.resolveUnprefixed
 Type: `Boolean`  
 Default: `true`
 
-Weather you want the files that are not prefixed with underscore to be resolved.
+Weather you want to resolve files that are not prefixed with underscore.
 
 ### Test
 ```
