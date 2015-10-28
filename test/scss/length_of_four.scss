@@ -1,0 +1,9 @@
+// Filenames with length of four would not normalize
+// correctly and return the literal import path;
+
+@import
+  "four",
+  "last",
+  "hide",
+  "_ast"
+;

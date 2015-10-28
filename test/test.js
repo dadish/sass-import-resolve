@@ -54,6 +54,11 @@ var cssImportSassStr = {
   str : fs.readFileSync('test/scss/css_import.scss', {encoding : 'utf8'})
 };
 
+var lengthOfFrouSassStr = {
+  path : 'test/scss/length_of_four.scss',
+  str : fs.readFileSync('test/scss/length_of_four.scss', {encoding : 'utf8'})
+};
+
 describe('resolveImports()', function () {
   
   it('should throw error if the first argument is not a `string`', function () {
@@ -248,6 +253,40 @@ describe('resolveImports()', function () {
       assert.strictEqual(2, resolveImports(onePrefixedSassStr.path, onePrefixedSassStr.str, {resolvePrefixed : false, resolveUnprefixed : false}).length);
     });
 
+  });
+
+  describe("the filenames with the length of four should resolve correctly", function () {
+    it('8 variants if `resolvePrefixed` option is `false`', function () {
+      assert.strictEqual(8, resolveImports(lengthOfFrouSassStr.path, lengthOfFrouSassStr.str, {resolvePrefixed : false}).length);
+    });
+
+    it('8 variants if `resolveUnprefixed` option is `false`', function () {
+      assert.strictEqual(8, resolveImports(lengthOfFrouSassStr.path, lengthOfFrouSassStr.str, {resolveUnprefixed : false}).length);
+    });
+
+    it('4 variants if `resolveSass` and `resolvePrefixed` options are `false`', function () {
+      assert.strictEqual(4, resolveImports(lengthOfFrouSassStr.path, lengthOfFrouSassStr.str, {resolveSass : false, resolvePrefixed : false}).length);
+    });
+
+    it('4 variants if `resolveSass` and `resolveUnprefixed` options are `false`', function () {
+      assert.strictEqual(4, resolveImports(lengthOfFrouSassStr.path, lengthOfFrouSassStr.str, {resolveSass : false, resolveUnprefixed : false}).length);
+    });
+
+    it('4 variants if `resolveScss` and `resolvePrefixed` options are `false`', function () {
+      assert.strictEqual(4, resolveImports(lengthOfFrouSassStr.path, lengthOfFrouSassStr.str, {resolveScss : false, resolvePrefixed : false}).length);
+    });
+
+    it('4 variants if `resolveScss` and `resolveUnprefixed` options are `false`', function () {
+      assert.strictEqual(4, resolveImports(lengthOfFrouSassStr.path, lengthOfFrouSassStr.str, {resolveScss : false, resolveUnprefixed : false}).length);
+    });
+
+    it('0 variants if `resolveScss` and `resolveSass` options are `false`', function () {
+      assert.strictEqual(0, resolveImports(lengthOfFrouSassStr.path, lengthOfFrouSassStr.str, {resolveSass : false, resolveScss : false}).length);
+    });
+
+    it('2 variants if `resolvePrefixed` and `resolveUnprefixed` options are `false`', function () {
+      assert.strictEqual(2, resolveImports(lengthOfFrouSassStr.path, lengthOfFrouSassStr.str, {resolvePrefixed : false, resolveUnprefixed : false}).length);
+    });
   });
 
 });
